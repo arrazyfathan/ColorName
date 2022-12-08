@@ -19,7 +19,7 @@
     </style>
 
     <style name="ColorText.Digit">
-        <item name="android:textSize">45sp</item>
+        <item name="android:textSize">38sp</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:gravity">center</item>
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
