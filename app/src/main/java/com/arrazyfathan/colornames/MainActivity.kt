@@ -7,8 +7,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import com.arrazyfathan.colornames.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
