@@ -8,7 +8,6 @@ import androidx.core.view.WindowCompat
 import androidx.lifecycle.Observer
 import com.arrazyfathan.colornames.databinding.ActivityMainBinding
 import com.arrazyfathan.colornames.networking.ColorApi
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.jakewharton.rxbinding4.view.clicks
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable

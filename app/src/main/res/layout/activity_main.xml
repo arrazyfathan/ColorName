@@ -6,118 +6,256 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
+    tools:background="@android:color/holo_red_dark"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/F"
-        style="@style/ColorText.Digit"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="F"
-        app:layout_constraintBottom_toBottomOf="@+id/E"
-        app:layout_constraintEnd_toEndOf="@+id/C"
-        app:layout_constraintStart_toStartOf="@+id/C"
-        app:layout_constraintTop_toTopOf="@+id/E" />
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_e"
+        app:layout_constraintEnd_toEndOf="@+id/layout_c"
+        app:layout_constraintStart_toStartOf="@+id/layout_c"
+        app:layout_constraintTop_toTopOf="@+id/layout_e"
+        app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/C"
-        style="@style/ColorText.Digit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="C"
-        app:layout_constraintBottom_toBottomOf="@+id/B"
-        app:layout_constraintEnd_toEndOf="@+id/nine"
-        app:layout_constraintStart_toStartOf="@+id/nine"
-        app:layout_constraintTop_toTopOf="@+id/B" />
+        <TextView
+            android:id="@+id/F"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="F" />
 
-    <TextView
-        android:id="@+id/nine"
-        style="@style/ColorText.Digit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="9"
-        app:layout_constraintBottom_toBottomOf="@+id/eight"
-        app:layout_constraintEnd_toEndOf="@+id/six"
-        app:layout_constraintStart_toStartOf="@+id/six"
-        app:layout_constraintTop_toTopOf="@+id/eight" />
+    </com.google.android.material.card.MaterialCardView>
 
-    <TextView
-        android:id="@+id/three"
-        style="@style/ColorText.Digit"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
-        app:layout_constraintBottom_toBottomOf="@+id/two"
-        app:layout_constraintEnd_toEndOf="@+id/back"
-        app:layout_constraintStart_toStartOf="@+id/back"
-        app:layout_constraintTop_toTopOf="@+id/two" />
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_b"
+        app:layout_constraintEnd_toEndOf="@+id/layout_nine"
+        app:layout_constraintStart_toStartOf="@+id/layout_nine"
+        app:layout_constraintTop_toTopOf="@+id/layout_b"
+        app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/six"
-        style="@style/ColorText.Digit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="6"
-        app:layout_constraintBottom_toBottomOf="@+id/five"
-        app:layout_constraintEnd_toEndOf="@+id/three"
-        app:layout_constraintStart_toStartOf="@+id/three"
-        app:layout_constraintTop_toTopOf="@+id/five" />
+        <TextView
+            android:id="@+id/C"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="C" />
+    </com.google.android.material.card.MaterialCardView>
 
-    <TextView
-        android:id="@+id/back"
-        style="@style/ColorText.Digit"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_nine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="←"
-        app:layout_constraintBottom_toBottomOf="@+id/zero"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_eight"
+        app:layout_constraintEnd_toEndOf="@+id/layout_six"
+        app:layout_constraintStart_toStartOf="@+id/layout_six"
+        app:layout_constraintTop_toTopOf="@+id/layout_eight"
+        app:strokeWidth="0dp">
+
+        <TextView
+            android:id="@+id/nine"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="9" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_two"
+        app:layout_constraintEnd_toEndOf="@+id/layout_back"
+        app:layout_constraintStart_toStartOf="@+id/layout_back"
+        app:layout_constraintTop_toTopOf="@+id/layout_two"
+        app:strokeWidth="0dp">
+
+        <TextView
+            android:id="@+id/three"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="3" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_six"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_five"
+        app:layout_constraintEnd_toEndOf="@+id/layout_three"
+        app:layout_constraintStart_toStartOf="@+id/layout_three"
+        app:layout_constraintTop_toTopOf="@+id/layout_five"
+        app:strokeWidth="0dp">
+
+        <TextView
+            android:id="@+id/six"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="6" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_zero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/zero"
-        app:layout_constraintTop_toTopOf="@+id/zero" />
+        app:layout_constraintStart_toEndOf="@+id/layout_zero"
+        app:layout_constraintTop_toTopOf="@+id/layout_zero"
+        app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/E"
-        style="@style/ColorText.Digit"
+        <TextView
+            android:id="@+id/back"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="4dp"
+            android:text="←" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_e"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="E"
-        app:layout_constraintBottom_toBottomOf="@+id/D"
-        app:layout_constraintEnd_toEndOf="@+id/B"
-        app:layout_constraintStart_toStartOf="@+id/B"
-        app:layout_constraintTop_toTopOf="@+id/D" />
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_d"
+        app:layout_constraintEnd_toEndOf="@+id/layout_b"
+        app:layout_constraintStart_toStartOf="@+id/layout_b"
+        app:layout_constraintTop_toTopOf="@+id/layout_d"
+        app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/B"
-        style="@style/ColorText.Digit"
+        <TextView
+            android:id="@+id/E"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="E" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="B"
-        app:layout_constraintBottom_toBottomOf="@+id/A"
-        app:layout_constraintEnd_toEndOf="@+id/eight"
-        app:layout_constraintStart_toStartOf="@+id/eight"
-        app:layout_constraintTop_toTopOf="@+id/A" />
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_a"
+        app:layout_constraintEnd_toEndOf="@+id/layout_eight"
+        app:layout_constraintStart_toStartOf="@+id/layout_eight"
+        app:layout_constraintTop_toTopOf="@+id/layout_a"
+        app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/eight"
-        style="@style/ColorText.Digit"
+        <TextView
+            android:id="@+id/B"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="B" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_eight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="8"
-        app:layout_constraintBottom_toBottomOf="@+id/seven"
-        app:layout_constraintEnd_toEndOf="@+id/five"
-        app:layout_constraintStart_toStartOf="@+id/five"
-        app:layout_constraintTop_toTopOf="@+id/seven" />
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_seven"
+        app:layout_constraintEnd_toEndOf="@+id/layout_five"
+        app:layout_constraintStart_toStartOf="@+id/layout_five"
+        app:layout_constraintTop_toTopOf="@+id/layout_seven"
+        app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/five"
-        style="@style/ColorText.Digit"
+        <TextView
+            android:id="@+id/eight"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="8" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5"
-        app:layout_constraintBottom_toBottomOf="@+id/four"
-        app:layout_constraintEnd_toEndOf="@+id/two"
-        app:layout_constraintStart_toStartOf="@+id/two"
-        app:layout_constraintTop_toTopOf="@+id/four" />
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_four"
+        app:layout_constraintEnd_toEndOf="@+id/layout_two"
+        app:layout_constraintStart_toStartOf="@+id/layout_two"
+        app:layout_constraintTop_toTopOf="@+id/layout_four"
+        app:strokeWidth="0dp">
+
+        <TextView
+            android:id="@+id/five"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="5" />
+
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/hex"
@@ -166,102 +304,205 @@
         app:layout_constraintTop_toBottomOf="@+id/hex"
         tools:text="cyan" />
 
-    <TextView
-        android:id="@+id/clear"
-        style="@style/ColorText.Digit"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="⊗"
-        app:layout_constraintBottom_toTopOf="@+id/one"
-        app:layout_constraintEnd_toStartOf="@+id/zero"
+        android:layout_marginTop="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/layout_one"
+        app:layout_constraintEnd_toStartOf="@+id/layout_zero"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgb" />
+        app:layout_constraintTop_toBottomOf="@+id/rgb"
+        app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/one"
-        style="@style/ColorText.Digit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="1"
-        app:layout_constraintBottom_toTopOf="@+id/four"
-        app:layout_constraintEnd_toEndOf="@+id/clear"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/clear"
-        app:layout_constraintTop_toBottomOf="@+id/clear" />
+        <TextView
+            android:id="@+id/clear"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="4dp"
+            android:text="⊗" />
 
-    <TextView
-        android:id="@+id/four"
-        style="@style/ColorText.Digit"
-        android:layout_width="32dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="4"
-        app:layout_constraintBottom_toTopOf="@+id/seven"
-        app:layout_constraintEnd_toEndOf="@+id/one"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/one"
-        app:layout_constraintTop_toBottomOf="@+id/one" />
+    </com.google.android.material.card.MaterialCardView>
 
-    <TextView
-        android:id="@+id/seven"
-        style="@style/ColorText.Digit"
-        android:layout_width="0dp"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_one"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="7"
-        app:layout_constraintBottom_toTopOf="@+id/A"
-        app:layout_constraintEnd_toEndOf="@+id/four"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/four"
-        app:layout_constraintTop_toBottomOf="@+id/four" />
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/layout_four"
+        app:layout_constraintEnd_toEndOf="@+id/layout_clear"
+        app:layout_constraintStart_toStartOf="@+id/layout_clear"
+        app:layout_constraintTop_toBottomOf="@+id/layout_clear"
+        app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/A"
-        style="@style/ColorText.Digit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="A"
-        app:layout_constraintBottom_toTopOf="@+id/D"
-        app:layout_constraintEnd_toEndOf="@+id/seven"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/seven"
-        app:layout_constraintTop_toBottomOf="@+id/seven" />
+        <TextView
+            android:id="@+id/one"
+            style="@style/ColorText.Digit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="1" />
+    </com.google.android.material.card.MaterialCardView>
 
-    <TextView
-        android:id="@+id/D"
-        style="@style/ColorText.Digit"
-        android:layout_width="0dp"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_four"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="D"
-        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/layout_seven"
+        app:layout_constraintEnd_toEndOf="@+id/layout_one"
+        app:layout_constraintStart_toStartOf="@+id/layout_one"
+        app:layout_constraintTop_toBottomOf="@+id/layout_one"
+        app:strokeWidth="0dp">
+
+        <TextView
+            android:id="@+id/four"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="4" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_seven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/layout_a"
+        app:layout_constraintEnd_toEndOf="@+id/layout_four"
+        app:layout_constraintStart_toStartOf="@+id/layout_four"
+        app:layout_constraintTop_toBottomOf="@+id/layout_four"
+        app:strokeWidth="0dp">
+
+        <TextView
+            android:id="@+id/seven"
+            style="@style/ColorText.Digit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="7" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/layout_d"
+        app:layout_constraintEnd_toEndOf="@+id/layout_seven"
+        app:layout_constraintStart_toStartOf="@+id/layout_seven"
+        app:layout_constraintTop_toBottomOf="@+id/layout_seven"
+        app:strokeWidth="0dp">
+
+        <TextView
+            android:id="@+id/A"
+            style="@style/ColorText.Digit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="A" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/A"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/A"
-        app:layout_constraintTop_toBottomOf="@+id/A" />
+        app:layout_constraintEnd_toEndOf="@+id/layout_a"
+        app:layout_constraintStart_toStartOf="@+id/layout_a"
+        app:layout_constraintTop_toBottomOf="@+id/layout_a"
+        app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/zero"
-        style="@style/ColorText.Digit"
+        <TextView
+            android:id="@+id/D"
+            style="@style/ColorText.Digit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="D" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_zero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        app:layout_constraintBottom_toBottomOf="@+id/clear"
-        app:layout_constraintEnd_toStartOf="@+id/back"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_clear"
+        app:layout_constraintEnd_toStartOf="@+id/layout_back"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/clear"
-        app:layout_constraintTop_toTopOf="@+id/clear" />
+        app:layout_constraintStart_toEndOf="@+id/layout_clear"
+        app:layout_constraintTop_toTopOf="@+id/layout_clear"
+        app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/two"
-        style="@style/ColorText.Digit"
+        <TextView
+            android:id="@+id/zero"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="0" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2"
-        app:layout_constraintBottom_toBottomOf="@+id/one"
-        app:layout_constraintEnd_toEndOf="@+id/zero"
-        app:layout_constraintStart_toStartOf="@+id/zero"
-        app:layout_constraintTop_toTopOf="@+id/one" />
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#30000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_one"
+        app:layout_constraintEnd_toEndOf="@+id/layout_zero"
+        app:layout_constraintStart_toStartOf="@+id/layout_zero"
+        app:layout_constraintTop_toTopOf="@+id/layout_one"
+        app:strokeWidth="0dp">
+
+        <TextView
+            android:id="@+id/two"
+            style="@style/ColorText.Digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="4dp"
+            android:text="2" />
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
