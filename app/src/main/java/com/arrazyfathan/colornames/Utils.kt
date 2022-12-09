@@ -7,6 +7,9 @@ package com.arrazyfathan.colornames
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.graphics.Color
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.PathInterpolator
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import io.reactivex.rxjava3.core.Observable
@@ -25,7 +28,8 @@ class ColorCoordinator {
 fun colorAnimator(fromColor: Int, toColor: Int): Observable<Int> {
     val valueAnimator = ValueAnimator.ofObject(ArgbEvaluator(), fromColor, toColor)
     valueAnimator.duration = 300
-    val observable = Observable.create<Int> { emitter ->
+    valueAnimator.interpolator = PathInterpolator(0.3f, 0f, 0.8f, 0.15f)
+    val observable = Observable.create { emitter ->
         valueAnimator.addUpdateListener {
             emitter.onNext(it.animatedValue as Int)
         }
@@ -40,7 +44,7 @@ fun createWithFactory(
 ): ViewModelProvider.Factory {
     return object : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            @Suppress("UNCHECKED_CAST")// Casting T as ViewModel
+            @Suppress("UNCHECKED_CAST")
             return create.invoke() as T
         }
     }
