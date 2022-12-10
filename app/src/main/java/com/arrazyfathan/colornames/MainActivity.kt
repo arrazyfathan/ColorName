@@ -2,9 +2,12 @@ package com.arrazyfathan.colornames
 
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.arrazyfathan.colornames.databinding.ActivityMainBinding
 import com.arrazyfathan.colornames.networking.ColorApi
@@ -42,11 +45,25 @@ class MainActivity : AppCompatActivity() {
 
     private fun observe() {
         viewModel.hexStringLiveData.observe(
-            this,
-            Observer {
-                binding.hex.text = it
+            this
+        ) {
+            binding.hex.text = it
+            if (it == "#FFFFFF") {
+                runOnUiThread {
+                    binding.colorName.setTextColor(ContextCompat.getColor(this, R.color.black))
+                    binding.rgb.setTextColor(ContextCompat.getColor(this, R.color.black))
+                    binding.hex.setTextColor(ContextCompat.getColor(this, R.color.black))
+                    binding.progress.setIndicatorColor(ContextCompat.getColor(this, R.color.black))
+                }
+            } else {
+                runOnUiThread {
+                    binding.colorName.setTextColor(ContextCompat.getColor(this, R.color.white))
+                    binding.rgb.setTextColor(ContextCompat.getColor(this, R.color.white))
+                    binding.hex.setTextColor(ContextCompat.getColor(this, R.color.white))
+                    binding.progress.setIndicatorColor(ContextCompat.getColor(this, R.color.white))
+                }
             }
-        )
+        }
 
         viewModel.rgbStringLiveData.observe(
             this,
@@ -61,11 +78,18 @@ class MainActivity : AppCompatActivity() {
             }
         )
         viewModel.backgroundColorLiveData.observe(
-            this,
-            Observer {
-                animateColorChange(it)
+            this
+        ) {
+            animateColorChange(it)
+        }
+        viewModel.isLoading.observe(this) {
+            binding.progress.isVisible = it
+            if (it) {
+                binding.colorName.visibility = View.INVISIBLE
+            } else {
+                binding.colorName.visibility = View.VISIBLE
             }
-        )
+        }
     }
 
     private fun initUI() = with(binding) {

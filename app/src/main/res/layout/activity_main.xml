@@ -10,12 +10,12 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_e"
         app:layout_constraintEnd_toEndOf="@+id/layout_c"
         app:layout_constraintStart_toStartOf="@+id/layout_c"
@@ -25,9 +25,9 @@
         <TextView
             android:id="@+id/F"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="F" />
 
@@ -35,12 +35,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_c"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_b"
         app:layout_constraintEnd_toEndOf="@+id/layout_nine"
         app:layout_constraintStart_toStartOf="@+id/layout_nine"
@@ -50,21 +50,21 @@
         <TextView
             android:id="@+id/C"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="C" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_nine"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_eight"
         app:layout_constraintEnd_toEndOf="@+id/layout_six"
         app:layout_constraintStart_toStartOf="@+id/layout_six"
@@ -74,21 +74,21 @@
         <TextView
             android:id="@+id/nine"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="9" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_three"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_two"
         app:layout_constraintEnd_toEndOf="@+id/layout_back"
         app:layout_constraintStart_toStartOf="@+id/layout_back"
@@ -98,9 +98,9 @@
         <TextView
             android:id="@+id/three"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="3" />
 
@@ -108,12 +108,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_six"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_five"
         app:layout_constraintEnd_toEndOf="@+id/layout_three"
         app:layout_constraintStart_toStartOf="@+id/layout_three"
@@ -123,9 +123,9 @@
         <TextView
             android:id="@+id/six"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="6" />
 
@@ -133,12 +133,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_back"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_zero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -149,9 +149,9 @@
         <TextView
             android:id="@+id/back"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="20dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="←" />
 
@@ -159,12 +159,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_e"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_d"
         app:layout_constraintEnd_toEndOf="@+id/layout_b"
         app:layout_constraintStart_toStartOf="@+id/layout_b"
@@ -174,9 +174,9 @@
         <TextView
             android:id="@+id/E"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="E" />
 
@@ -184,12 +184,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_b"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_a"
         app:layout_constraintEnd_toEndOf="@+id/layout_eight"
         app:layout_constraintStart_toStartOf="@+id/layout_eight"
@@ -199,9 +199,9 @@
         <TextView
             android:id="@+id/B"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="B" />
 
@@ -209,12 +209,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_eight"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_seven"
         app:layout_constraintEnd_toEndOf="@+id/layout_five"
         app:layout_constraintStart_toStartOf="@+id/layout_five"
@@ -224,9 +224,9 @@
         <TextView
             android:id="@+id/eight"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="8" />
 
@@ -234,12 +234,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_five"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_four"
         app:layout_constraintEnd_toEndOf="@+id/layout_two"
         app:layout_constraintStart_toStartOf="@+id/layout_two"
@@ -249,9 +249,9 @@
         <TextView
             android:id="@+id/five"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="5" />
 
@@ -278,10 +278,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:gravity="center"
         android:textColor="@android:color/white"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toStartOf="@+id/color_name"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@id/guideline"
         app:layout_constraintHorizontal_weight="10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hex"
@@ -292,27 +293,44 @@
         style="@style/ColorText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
+        android:shadowColor="@color/black"
         android:textColor="@android:color/white"
-        android:textSize="28sp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rgb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="2"
         app:layout_constraintHorizontal_weight="8"
-        app:layout_constraintStart_toEndOf="@+id/rgb"
+        app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/hex"
         tools:text="cyan" />
 
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/white"
+        app:indicatorSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/color_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="@id/color_name"
+        app:trackThickness="2dp" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_clear"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toTopOf="@+id/layout_one"
         app:layout_constraintEnd_toStartOf="@+id/layout_zero"
         app:layout_constraintHorizontal_bias="0.5"
@@ -323,9 +341,9 @@
         <TextView
             android:id="@+id/clear"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="25dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="⊗" />
 
@@ -333,13 +351,13 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_one"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toTopOf="@+id/layout_four"
         app:layout_constraintEnd_toEndOf="@+id/layout_clear"
         app:layout_constraintStart_toStartOf="@+id/layout_clear"
@@ -351,19 +369,19 @@
             style="@style/ColorText.Digit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="1" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_four"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toTopOf="@+id/layout_seven"
         app:layout_constraintEnd_toEndOf="@+id/layout_one"
         app:layout_constraintStart_toStartOf="@+id/layout_one"
@@ -373,21 +391,21 @@
         <TextView
             android:id="@+id/four"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="4" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_seven"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toTopOf="@+id/layout_a"
         app:layout_constraintEnd_toEndOf="@+id/layout_four"
         app:layout_constraintStart_toStartOf="@+id/layout_four"
@@ -399,7 +417,7 @@
             style="@style/ColorText.Digit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="7" />
 
@@ -407,12 +425,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_a"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toTopOf="@+id/layout_d"
         app:layout_constraintEnd_toEndOf="@+id/layout_seven"
         app:layout_constraintStart_toStartOf="@+id/layout_seven"
@@ -424,20 +442,20 @@
             style="@style/ColorText.Digit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="A" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_d"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/layout_a"
         app:layout_constraintStart_toStartOf="@+id/layout_a"
@@ -449,7 +467,7 @@
             style="@style/ColorText.Digit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="D" />
 
@@ -457,12 +475,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_zero"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_clear"
         app:layout_constraintEnd_toStartOf="@+id/layout_back"
         app:layout_constraintHorizontal_bias="0.5"
@@ -473,21 +491,21 @@
         <TextView
             android:id="@+id/zero"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="0" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/layout_two"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="#30000000"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/layout_one"
         app:layout_constraintEnd_toEndOf="@+id/layout_zero"
         app:layout_constraintStart_toStartOf="@+id/layout_zero"
@@ -497,12 +515,19 @@
         <TextView
             android:id="@+id/two"
             style="@style/ColorText.Digit"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
+            android:layout_gravity="center"
             android:paddingVertical="4dp"
             android:text="2" />
 
     </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

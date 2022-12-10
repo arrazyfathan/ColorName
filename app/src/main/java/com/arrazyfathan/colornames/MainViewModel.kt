@@ -26,6 +26,7 @@ class MainViewModel(
     val backgroundColorLiveData = MutableLiveData<Int>()
     val rgbStringLiveData = MutableLiveData<String>()
     val colorNameLiveData = MutableLiveData<String>()
+    val isLoading = MutableLiveData<Boolean>()
     private val clearStream = PublishSubject.create<Unit>()
     private val backStream = PublishSubject.create<Unit>()
     private val digitStream = BehaviorSubject.create<String>()
@@ -61,6 +62,8 @@ class MainViewModel(
             .flatMapSingle {
                 colorApi.getClosestColor(it)
                     .subscribeOn(backgroundScheduler)
+                    .doOnSubscribe{ isLoading.postValue(true)}
+                    .doAfterSuccess { isLoading.postValue(false)}
             }
             .map {
                 it.name.value
