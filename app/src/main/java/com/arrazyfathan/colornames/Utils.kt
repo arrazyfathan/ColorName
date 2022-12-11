@@ -50,7 +50,7 @@ fun createWithFactory(
     }
 }
 
-class RGBColor(val red: Int, val green: Int, val blue: Int)
+data class RGBColor(val red: Int, val green: Int, val blue: Int)
 
 enum class ColorName(val hex: String) {
     ALICEBLUE("#F0F8FF"),

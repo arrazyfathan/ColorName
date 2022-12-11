@@ -90,6 +90,23 @@ class MainActivity : AppCompatActivity() {
                 binding.colorName.visibility = View.VISIBLE
             }
         }
+        viewModel.rgbLiveData.observe(this) {
+            if (it.red >= 187 && it.green >= 187 && it.blue >= 187) {
+                runOnUiThread {
+                    binding.colorName.setTextColor(ContextCompat.getColor(this, R.color.black))
+                    binding.rgb.setTextColor(ContextCompat.getColor(this, R.color.black))
+                    binding.hex.setTextColor(ContextCompat.getColor(this, R.color.black))
+                    binding.progress.setIndicatorColor(ContextCompat.getColor(this, R.color.black))
+                }
+            } else {
+                runOnUiThread {
+                    binding.colorName.setTextColor(ContextCompat.getColor(this, R.color.white))
+                    binding.rgb.setTextColor(ContextCompat.getColor(this, R.color.white))
+                    binding.hex.setTextColor(ContextCompat.getColor(this, R.color.white))
+                    binding.progress.setIndicatorColor(ContextCompat.getColor(this, R.color.white))
+                }
+            }
+        }
     }
 
     private fun initUI() = with(binding) {

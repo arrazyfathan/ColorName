@@ -25,6 +25,7 @@ class MainViewModel(
     val hexStringLiveData = MutableLiveData<String>()
     val backgroundColorLiveData = MutableLiveData<Int>()
     val rgbStringLiveData = MutableLiveData<String>()
+    val rgbLiveData = MutableLiveData<RGBColor>()
     val colorNameLiveData = MutableLiveData<String>()
     val isLoading = MutableLiveData<Boolean>()
     private val clearStream = PublishSubject.create<Unit>()
@@ -78,11 +79,24 @@ class MainViewModel(
                 if (it.length == 7) {
                     colorCoordinator.parseRgbColor(it)
                 } else {
-                    RGBColor(255, 255, 255)
+                    RGBColor(0, 0, 0)
                 }
             }
             .map { "${it.red},${it.green},${it.blue}" }
             .subscribe(rgbStringLiveData::postValue)
+            .addTo(disposable)
+
+        hexStringSubject
+            .subscribeOn(backgroundScheduler)
+            .observeOn(mainScheduler)
+            .map {
+                if (it.length == 7) {
+                    colorCoordinator.parseRgbColor(it)
+                } else {
+                    RGBColor(0, 0, 0)
+                }
+            }
+            .subscribe(rgbLiveData::postValue)
             .addTo(disposable)
 
         clearStream
