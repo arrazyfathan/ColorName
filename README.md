@@ -1,5 +1,9 @@
-**Color Names**
+<h1 align="center">Color Names</h1>
+
+<p align="center">  
 A simple application to generate color names made with RxJava and RxBinding.
+</p>
+
 
 Demo :
 
