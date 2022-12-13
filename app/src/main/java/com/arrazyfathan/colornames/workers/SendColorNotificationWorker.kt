@@ -6,7 +6,9 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Context.NOTIFICATION_SERVICE
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
+import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.work.CoroutineWorker
@@ -35,10 +37,12 @@ class SendColorNotificationWorker(
     override suspend fun doWork(): Result = coroutineScope {
         val job = async {
             val rgb = generateRandomColor()
+            val colorRgb = Color.rgb(rgb.red, rgb.green, rgb.blue)
+            val hex = String.format("%06X", 0xFFFFFF and colorRgb)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 createNotificationChannel()
             }
-            displayNotificationColor(rgb)
+            displayNotificationColor(rgb, hex)
         }
         job.await()
         Result.success()
@@ -49,6 +53,15 @@ class SendColorNotificationWorker(
         val randomGreen = (0..255).random()
         val randomBlue = (0..255).random()
         return RGBColor(randomRed, randomGreen, randomBlue)
+    }
+
+    fun generateRandomHex() {
+        val numberHex = (0..9).random()
+        val letters = ('A'..'F').random()
+        var hex = ""
+        repeat(6) {
+            hex += numberHex
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -65,9 +78,11 @@ class SendColorNotificationWorker(
         }
     }
 
-    private fun displayNotificationColor(rgb: RGBColor) {
+    private fun displayNotificationColor(rgb: RGBColor, hex: String) {
         val contentIntent = Intent(applicationContext, MainActivity::class.java)
-        contentIntent.putExtra(COLOR_RGB_EXTRA, rgb.toString())
+        val bundle = Bundle()
+        bundle.putString(COLOR_RGB_EXTRA, hex)
+        contentIntent.putExtras(bundle)
         val pendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             PendingIntent.getActivity(
                 applicationContext,

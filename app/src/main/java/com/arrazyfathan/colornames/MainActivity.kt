@@ -4,7 +4,6 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -12,6 +11,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.work.Constraints
+import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.arrazyfathan.colornames.databinding.ActivityMainBinding
@@ -57,9 +57,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun handleIntent(intent: Intent?) {
-        val rgb = intent?.getStringExtra(SendColorNotificationWorker.COLOR_RGB_EXTRA)
-        if (rgb != null) {
-            Toast.makeText(this, rgb, Toast.LENGTH_SHORT).show()
+        val hex = intent?.extras
+        if (hex != null) {
+            val hexColor =
+                hex.getString(SendColorNotificationWorker.COLOR_NOTIFICATION_CHANNEL, "000000")
         }
     }
 
@@ -68,12 +69,15 @@ class MainActivity : AppCompatActivity() {
             setRequiresBatteryNotLow(true)
         }.build()
 
-        val work = PeriodicWorkRequestBuilder<SendColorNotificationWorker>(15, TimeUnit.MINUTES)
+        val work = PeriodicWorkRequestBuilder<SendColorNotificationWorker>(12, TimeUnit.HOURS)
             .setConstraints(constraints)
             .build()
 
-        val workManager = WorkManager.getInstance(application.applicationContext)
-        workManager.enqueue(work)
+        WorkManager.getInstance(this).enqueueUniquePeriodicWork(
+            TAG_SEND_COLOR_JOB,
+            ExistingPeriodicWorkPolicy.REPLACE,
+            work
+        )
     }
 
     private fun observe() {
