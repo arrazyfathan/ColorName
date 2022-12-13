@@ -1,22 +1,29 @@
 package com.arrazyfathan.colornames
 
+import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
+import androidx.work.Constraints
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
 import com.arrazyfathan.colornames.databinding.ActivityMainBinding
 import com.arrazyfathan.colornames.networking.ColorApi
+import com.arrazyfathan.colornames.workers.SendColorNotificationWorker
 import com.jakewharton.rxbinding4.view.clicks
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.kotlin.addTo
 import io.reactivex.rxjava3.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +41,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    companion object {
+        private const val TAG_SEND_COLOR_JOB = "tag_send_color_job"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
@@ -41,6 +52,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initUI()
         observe()
+        setupScheduler()
+        handleIntent(intent)
+    }
+
+    private fun handleIntent(intent: Intent?) {
+        val rgb = intent?.getStringExtra(SendColorNotificationWorker.COLOR_RGB_EXTRA)
+        if (rgb != null) {
+            Toast.makeText(this, rgb, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun setupScheduler() {
+        val constraints = Constraints.Builder().apply {
+            setRequiresBatteryNotLow(true)
+        }.build()
+
+        val work = PeriodicWorkRequestBuilder<SendColorNotificationWorker>(15, TimeUnit.MINUTES)
+            .setConstraints(constraints)
+            .build()
+
+        val workManager = WorkManager.getInstance(application.applicationContext)
+        workManager.enqueue(work)
     }
 
     private fun observe() {
