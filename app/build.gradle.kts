@@ -61,4 +61,8 @@ dependencies {
     implementation("io.reactivex.rxjava3:rxandroid:3.0.0")
     implementation("com.jakewharton.rxbinding4:rxbinding:4.0.0")
     implementation("com.jakewharton.rxbinding4:rxbinding:4.0.0")
+
+    val workManager = "2.7.1"
+    implementation("androidx.work:work-runtime-ktx:$workManager")
+    implementation("androidx.work:work-rxjava3:$workManager")
 }
