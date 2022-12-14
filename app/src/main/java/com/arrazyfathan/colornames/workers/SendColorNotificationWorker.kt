@@ -35,7 +35,7 @@ class SendColorNotificationWorker(
     }
 
     override suspend fun doWork(): Result = coroutineScope {
-        val job = async {
+        /*val job = async {
             val rgb = generateRandomColor()
             val colorRgb = Color.rgb(rgb.red, rgb.green, rgb.blue)
             val hex = String.format("%06X", 0xFFFFFF and colorRgb)
@@ -44,7 +44,7 @@ class SendColorNotificationWorker(
             }
             displayNotificationColor(rgb, hex)
         }
-        job.await()
+        job.await()*/
         Result.success()
     }
 

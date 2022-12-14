@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -36,7 +37,8 @@ class MainActivity : AppCompatActivity() {
                 backgroundScheduler = Schedulers.io(),
                 mainScheduler = AndroidSchedulers.mainThread(),
                 colorCoordinator = ColorCoordinator(),
-                colorApi = ColorApi
+                colorApi = ColorApi,
+                application
             )
         }
     }
@@ -52,15 +54,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initUI()
         observe()
-        setupScheduler()
         handleIntent(intent)
     }
 
-    private fun handleIntent(intent: Intent?) {
-        val hex = intent?.extras
+    private fun handleIntent(intent: Intent) {
+        val hex = intent.getStringExtra("hex")
         if (hex != null) {
-            val hexColor =
-                hex.getString(SendColorNotificationWorker.COLOR_NOTIFICATION_CHANNEL, "000000")
+            Toast.makeText(this, hex, Toast.LENGTH_SHORT).show()
+            viewModel.setDigitStream(hex)
         }
     }
 
