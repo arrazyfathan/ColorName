@@ -173,8 +173,8 @@ class MainViewModel(
         val alarmManager = app.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         alarmManager.setInexactRepeating(
             AlarmManager.ELAPSED_REALTIME_WAKEUP,
-            SystemClock.elapsedRealtime() + 6000,
-            AlarmManager.INTERVAL_HOUR,
+            SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_HALF_DAY,
+            AlarmManager.INTERVAL_HALF_DAY,
             notifyPendingIntent
         )
     }
