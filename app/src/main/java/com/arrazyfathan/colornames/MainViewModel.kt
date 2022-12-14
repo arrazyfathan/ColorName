@@ -174,7 +174,7 @@ class MainViewModel(
         alarmManager.setInexactRepeating(
             AlarmManager.ELAPSED_REALTIME_WAKEUP,
             SystemClock.elapsedRealtime() + 6000,
-            6000,
+            AlarmManager.INTERVAL_HOUR,
             notifyPendingIntent
         )
     }
