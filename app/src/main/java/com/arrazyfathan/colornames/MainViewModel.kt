@@ -5,6 +5,7 @@ import android.app.Application
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.SystemClock
 import androidx.lifecycle.AndroidViewModel
@@ -42,7 +43,6 @@ class MainViewModel(
     private val digitStream = BehaviorSubject.create<String>()
 
     private val REQUEST_CODE = 0
-    private val timeLenght: Int
     private val notifyPendingIntent: PendingIntent
     private val notifyIntent = Intent(app, AlarmReceiver::class.java)
 
@@ -136,24 +136,26 @@ class MainViewModel(
             .subscribe(hexStringSubject::onNext)
             .addTo(disposable)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            notifyPendingIntent = PendingIntent.getBroadcast(
+        val rgb = generateRandomColor()
+        val colorRgb = Color.rgb(rgb.red, rgb.green, rgb.blue)
+        val hex = String.format("%06X", 0xFFFFFF and colorRgb)
+        notifyIntent.putExtra("hex", hex)
+
+        notifyPendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            PendingIntent.getBroadcast(
                 getApplication(),
                 REQUEST_CODE,
                 notifyIntent,
-                PendingIntent.FLAG_IMMUTABLE
+                PendingIntent.FLAG_MUTABLE
             )
         } else {
-            notifyPendingIntent = PendingIntent.getBroadcast(
+            PendingIntent.getBroadcast(
                 getApplication(),
                 REQUEST_CODE,
                 notifyIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT
             )
         }
-
-        timeLenght = 6000
-
         startTimer()
     }
 
@@ -168,18 +170,23 @@ class MainViewModel(
     fun digitClicked(digit: String) = digitStream.onNext(digit)
 
     private fun startTimer() {
-        val triggeredTime = SystemClock.elapsedRealtime() + timeLenght
         val alarmManager = app.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-
-        alarmManager.setRepeating(
+        alarmManager.setInexactRepeating(
             AlarmManager.ELAPSED_REALTIME_WAKEUP,
             SystemClock.elapsedRealtime() + 6000,
-            AlarmManager.INTERVAL_HOUR,
+            6000,
             notifyPendingIntent
         )
     }
 
     fun setDigitStream(digit: String) = digitStream.onNext(digit)
+
+    private fun generateRandomColor(): RGBColor {
+        val randomRed = (0..255).random()
+        val randomGreen = (0..255).random()
+        val randomBlue = (0..255).random()
+        return RGBColor(randomRed, randomGreen, randomBlue)
+    }
 
     override fun onCleared() {
         super.onCleared()

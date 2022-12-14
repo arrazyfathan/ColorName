@@ -72,24 +72,21 @@ fun NotificationManager.sendNotification(rgb: RGBColor, hex: String, application
 }
 
 fun displayNotificationColor(hex: String, applicationContext: Context) {
-    val contentIntent = Intent(applicationContext, MainActivity::class.java)
-        .putExtra("hex", hex)
+    val contentIntent = Intent(applicationContext, MainActivity::class.java).apply {
+        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+    }.putExtra("hex", hex)
     val pendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
         PendingIntent.getActivity(
             applicationContext,
             0,
-            contentIntent
-                .addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP),
+            contentIntent,
             PendingIntent.FLAG_IMMUTABLE
         )
     } else {
         PendingIntent.getActivity(
             applicationContext,
             0,
-            contentIntent
-                .addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP),
+            contentIntent,
             PendingIntent.FLAG_UPDATE_CURRENT
         )
     }

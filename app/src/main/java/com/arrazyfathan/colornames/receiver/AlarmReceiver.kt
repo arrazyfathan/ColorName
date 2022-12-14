@@ -17,14 +17,23 @@ class AlarmReceiver : BroadcastReceiver() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onReceive(context: Context, intent: Intent?) {
-        val rgb = generateRandomColor()
-        val colorRgb = Color.rgb(rgb.red, rgb.green, rgb.blue)
-        val hex = String.format("%06X", 0xFFFFFF and colorRgb)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            createNotificationChannel(context)
-        }
+        val hexFromIntent = intent?.getStringExtra("hex")
+        if (hexFromIntent != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                createNotificationChannel(context)
+            }
 
-        displayNotificationColor(hex, context)
+            displayNotificationColor(hexFromIntent, context)
+        } else {
+            val rgb = generateRandomColor()
+            val colorRgb = Color.rgb(rgb.red, rgb.green, rgb.blue)
+            val hex = String.format("%06X", 0xFFFFFF and colorRgb)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                createNotificationChannel(context)
+            }
+
+            displayNotificationColor(hex, context)
+        }
     }
 
     private fun generateRandomColor(): RGBColor {

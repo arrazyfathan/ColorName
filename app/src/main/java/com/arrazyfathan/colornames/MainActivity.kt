@@ -54,10 +54,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initUI()
         observe()
-        handleIntent(intent)
-    }
-
-    private fun handleIntent(intent: Intent) {
         val hex = intent.getStringExtra("hex")
         if (hex != null) {
             Toast.makeText(this, hex, Toast.LENGTH_SHORT).show()
