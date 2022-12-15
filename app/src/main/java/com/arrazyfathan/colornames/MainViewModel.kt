@@ -146,7 +146,7 @@ class MainViewModel(
                 getApplication(),
                 REQUEST_CODE,
                 notifyIntent,
-                PendingIntent.FLAG_MUTABLE
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
             )
         } else {
             PendingIntent.getBroadcast(

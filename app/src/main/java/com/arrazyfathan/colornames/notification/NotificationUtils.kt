@@ -80,7 +80,7 @@ fun displayNotificationColor(hex: String, applicationContext: Context) {
             applicationContext,
             0,
             contentIntent,
-            PendingIntent.FLAG_IMMUTABLE
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
     } else {
         PendingIntent.getActivity(
